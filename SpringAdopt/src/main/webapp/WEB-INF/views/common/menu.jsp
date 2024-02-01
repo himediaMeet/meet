@@ -15,7 +15,8 @@
 
 <!-- Bootstrap CSS -->
 <script src="<c:url value='/resources/js/bootstrap.bundle.min.js'/>"></script>
-<link href="<c:url value='/resources/css/bootstrap.min.css'/>"rel="stylesheet">
+<link href="<c:url value='/resources/css/bootstrap.min.css'/>"
+	rel="stylesheet">
 <link
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
 	rel="stylesheet">
@@ -35,63 +36,66 @@
 </head>
 
 <body>
-
+	<nav class="navbar navbar-expand-sm">
+		<div style="position: absolute; top: 0%; left: 20%;">
+			<a class="navbar-brand fs-6" href="<c:url value='/index'/>">
+				<img src="<c:url value='/resources/images/logo.png'/>" alt="logo">
+			</a>
+		</div>
+		<div class="container justify-content-end">
+			<ul class="custom-navbar-cta navbar-nav mb-2 mb-md-0 ms-5 p-0">
+					<c:choose>
+						<c:when test="${sessionScope.id == null }">
+							<li><a class="nav-link link-secondary link-underline-opacity-0 fs-6"
+								href="<c:url value='/login/signin' />" style="font-size: 3px;"> 로그인  &nbsp|</a></li>
+						</c:when>
+						<c:when test="${sessionScope.id != null }">
+							<li><a class="nav-link link-secondary link-underline-opacity-0 fs-6"
+								href="<c:url value='/login/signout' />" style="font-size: 3px;"> 로그아웃 &nbsp|</a></li>
+						</c:when>
+					</c:choose>
+					<c:choose>
+						<c:when test="${sessionScope.id == null }">
+							<li><a class="nav-link link-secondary link-underline-opacity-0 fs-6"
+								href="<c:url value='/login/signup'/>" style="font-size: 3px;"> 회원가입 </a></li>
+						</c:when>
+						<c:when test="${sessionScope.id != null }">
+							<li><a class="nav-link link-secondary link-underline-opacity-0 fs-6"
+								href="<c:url value='/login/mypagemain'/>" style="font-size: 3px;">마이페이지 </a></li>
+						</c:when>
+					</c:choose>
+				</ul>
+		</div>
+	</nav>
+	
 	<nav class="navbar navbar-expand-sm">
 		<div class="container">
-			<a class="navbar-brand" href="<c:url value='/index'/>">만나</a>
 			<div class="collapse navbar-collapse justify-content-end"
 				id="collapsibleNavbar">
 				<ul class="navbar-nav">
-					<li class="nav-item"><a class="nav-link active" href="#">About</a></li>
-					<li class="nav-item dropdown">
-						<a
-						class="nav-link active dropdown-toggle"
+					<li class="nav-item"><a class="nav-link active fs-5" href="#">About</a></li>
+					<li class="nav-item dropdown"><a
+						class="nav-link active dropdown-toggle fs-5"
 						href="<c:url value='/adopt/adopt_list'/>" role="button"
 						data-bs-toggle="dropdown" aria-expanded="false"> 입양 </a>
 						<ul class="dropdown-menu">
-							<li><a class="dropdown-item"
+							<li><a class="dropdown-item fs-6"
 								href="<c:url value='/adopt/adopt_list'/>">입양</a></li>
-							<li><a class="dropdown-item"
+							<li><a class="dropdown-item fs-6"
 								href="<c:url value='/adopt/review_list'/>">입양후기</a></li>
 						</ul>
 					</li>
-					<li class="nav-item"><a class="nav-link active"
-						href="<c:url value='/lost/lost'/>">동물 분실</a></li>
+					<li class="nav-item"><a class="nav-link active fs-5"
+						href="<c:url value='/lost/lost'/>">동물 분실</a>
+					</li>
+					<li class="nav-item"><a class="nav-link active fs-5" 
+						href="<c:url value='/lost/lost'/>">보호소</a>
+					</li>
+					<li class="nav-item"><a class="nav-link active fs-5"
+						href="<c:url value='/lost/lost'/>">후원하기</a>
+					</li>
 				</ul>
-				<ul class="custom-navbar-cta navbar-nav mb-2 mb-md-0 ms-5">
-						<c:choose>
-							<c:when test="${sessionScope.id == null }">
-								<li>
-									<a class="nav-link" href="<c:url value='/login/signin' />">
-										<img src="<c:url value='/resources/images/signin.png'/>" alt="로그인">
-									</a>
-								</li>
-							</c:when>
-							<c:when test="${sessionScope.id != null }">
-								<li>
-									<a class="nav-link" href="<c:url value='/login/signout' />">
-										<img src="<c:url value='/resources/images/signout.png'/>" alt="로그아웃">
-									</a>
-								</li>
-							</c:when>
-						</c:choose>
-						<c:choose>
-							<c:when test="${sessionScope.id == null }">
-								<li>
-									<a class="nav-link" href="<c:url value='/login/signup'/>">
-										<img src="<c:url value='/resources/images/signup.png'/>" alt="회원가입">
-									</a>
-								</li>
-							</c:when>
-							<c:when test="${sessionScope.id != null }">
-								<li>
-									<a class="nav-link" href="<c:url value='/login/mypagemain'/>">
-										<img src="<c:url value='/resources/images/user.png'/>" alt="마이페이지">
-									</a>
-								</li>
-							</c:when>
-						</c:choose>
-					</ul>
+				
 			</div>
 		</div>
 	</nav>

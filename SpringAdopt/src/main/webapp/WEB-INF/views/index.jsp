@@ -15,15 +15,18 @@
 							<img src="<c:url value='/resources/images/mainBanner1.png'/>"
 							class="d-block vw-100 h-50" alt="메인 베너 화면1">
 						</a>
-						
 					</div>
 					<div class="carousel-item">
-						<img src="<c:url value='/resources/images/Banner2.png'/>"
+						<a href="<c:url value='/adopt/adopt_list'/>">
+							<img src="<c:url value='/resources/images/mainBanner2.png'/>"
 							class="d-block vw-100 h-50" alt="메인 베너 화면2">
+						</a>
 					</div>
 					<div class="carousel-item">
-						<img src="<c:url value='/resources/images/Banner3.png'/>"
+						<a href="<c:url value='/adopt/adopt_list'/>">
+							<img src="<c:url value='/resources/images/mainBanner3.png'/>"
 							class="d-block vw-100 h-50" alt="메인 베너 화면3">
+						</a>
 					</div>
 				</div>
 				<button class="carousel-control-prev" type="button"
