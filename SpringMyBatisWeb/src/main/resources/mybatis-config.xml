@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-config.dtd">
+  
+<configuration>
+ 	<typeAliases>  <!-- DAO에서 SQL문으로 값을 전달 할 때 또는 SQL문을 실행 한 후 가져온 값을 DAO로 전달 할때 사용할 빈 생성 -->
+ 		<typeAlias alias="BoardDto" type="spring.lost.domain.BoardDto"/>
+ 		<typeAlias alias="SearchItem" type="spring.lost.domain.SearchItem"/>
+ 		<typeAlias alias="CommentDto" type="spring.lost.domain.CommentDto"/>
+ 	</typeAliases>
+</configuration>  
